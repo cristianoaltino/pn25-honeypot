@@ -4,16 +4,20 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 import os
 import datetime
 import json
-from urllib.parse import urlparse, parse_qs
+from urllib.parse import urlparse
+from dotenv import load_dotenv
 
-# config
-HOST = "0.0.0.0"
-PORT = 8080
-LOG_DIR = "logs"
+# Carrega variáveis do .env na raiz
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"))
+
+# config via .env com fallback padrão
+HOST = os.getenv("HOST", "0.0.0.0")
+PORT = int(os.getenv("PORT", 8080))
+LOG_DIR = os.getenv("LOG_DIR", "logs")
 
 os.makedirs(LOG_DIR, exist_ok=True)
 
-# Class Handler
+# Handler
 class HTTPHoneypotHandler(BaseHTTPRequestHandler):
     def _log_request(self, body=None):
         log_data = {
@@ -77,3 +81,4 @@ def run_server():
 
 if __name__ == "__main__":
     run_server()
+

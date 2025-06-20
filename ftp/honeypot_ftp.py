@@ -5,15 +5,26 @@ import threading
 import datetime
 import os
 import json
+from dotenv import load_dotenv
 
-# config
-HOST = "0.0.0.0"
-PORT = 2121  # Porta fake FTP
-LOG_DIR = "logs"
+# ----------------------------
+# Carregar variáveis do .env
+# ----------------------------
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"))
 
+# ----------------------------
+# CONFIGURAÇÃO
+# ----------------------------
+HOST = os.getenv("HOST", "0.0.0.0")
+PORT = int(os.getenv("PORT_FTP", 2121))  # Porta específica para FTP
+LOG_DIR = os.path.join(os.getenv("LOG_DIR", "logs"), "ftp")
+
+# Garante que a pasta de logs FTP exista
 os.makedirs(LOG_DIR, exist_ok=True)
 
-# handler de comandos
+# ----------------------------
+# Handler de comandos
+# ----------------------------
 class FTPHoneypotHandler(socketserver.BaseRequestHandler):
     def handle(self):
         ip = self.client_address[0]
@@ -69,7 +80,9 @@ class FTPHoneypotHandler(socketserver.BaseRequestHandler):
                 json.dump(log_data, f, indent=4)
             self.request.close()
 
-# sever Thread-safe
+# ----------------------------
+# Servidor Thread-safe
+# ----------------------------
 class ThreadedFTPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
     pass
 
@@ -86,3 +99,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
