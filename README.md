@@ -18,10 +18,8 @@ O objetivo é demonstrar, de forma didática e controlada, como criar honeypots 
 ```plaintext
 .
 ├── honeypots/
-│   ├── ssh_honeypot.py
 │   ├── http_honeypot.py
 │   ├── ftp_honeypot.py
-│   └── mysql_honeypot.py
 ├── logs
 ├── requirements.txt
 ├── .env.example
