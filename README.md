@@ -15,7 +15,7 @@ O objetivo é demonstrar, de forma didática e controlada, como criar honeypots 
 
 ## 📁 Estrutura do repositório
 
-```plaintext
+   ```plaintext
 .
 ├── honeypots/
 │   ├── ssh_honeypot.py
@@ -26,7 +26,7 @@ O objetivo é demonstrar, de forma didática e controlada, como criar honeypots 
 ├── requirements.txt
 ├── .env.example
 └── README.md
-```
+
 
 
 ## ⚙️ Pré-requisitos
@@ -44,7 +44,6 @@ O objetivo é demonstrar, de forma didática e controlada, como criar honeypots 
    git clone https://github.com/cristianoaltino/pn25-honeypot.git
    cd pn25-honeypot
    python -m venv venv
-
 
 ### ✅ **Pronto para usar**
 - Você pode copiar este conteúdo para o arquivo `README.md` na raiz do repositório.
