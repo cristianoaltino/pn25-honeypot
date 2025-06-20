@@ -1,0 +1,9 @@
+logs/
+config.py
+.env
+*.tmp
+*.swp
+dist/
+build/
+.vscode/
+.idea/
