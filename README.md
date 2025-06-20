@@ -44,9 +44,3 @@ O objetivo é demonstrar, de forma didática e controlada, como criar honeypots 
    git clone https://github.com/cristianoaltino/pn25-honeypot.git
    cd pn25-honeypot
    python -m venv venv
-
-### ✅ **Pronto para usar**
-- Você pode copiar este conteúdo para o arquivo `README.md` na raiz do repositório.
-- Se quiser, posso gerar uma versão em inglês também!
-
-Quer que eu gere os arquivos `.env.example` e `requirements.txt` para complementar? 🚀✨
