@@ -22,7 +22,7 @@ O objetivo é demonstrar, de forma didática e controlada, como criar honeypots 
 │   ├── http_honeypot.py
 │   ├── ftp_honeypot.py
 │   └── mysql_honeypot.py
-├── log_monitor.py
+├── logs
 ├── requirements.txt
 ├── .env.example
 └── README.md
